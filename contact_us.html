@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="shortcut icon" href="img/favicon-merc.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .fixed-nav {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <div class="lg:hidden flex justify-between items-center pt-4 md:pt-6 px-4 md:px-10 pb-3 bg-black">
+        <a href="index.html">
+            <img src="img/amg-logo.svg" alt="logo" class="w-[140px] md:w-[160px] h-[40px] md:h-[45px]">
+        </a>
+
+        <div class="flex items-center gap-2 md:gap-3">
+            <button class="font-medium px-4 md:px-5 py-1 md:py-1.5 text-sm md:text-base rounded-full bg-red-700 shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                transition-all duration-300 ease-in-out
+                hover:bg-red-700
+                hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                active:scale-95">Login</button>
+            <i class="fa-sharp-duotone fa-solid fa-circle-info text-sm md:text-base"></i>
+        </div>
+    </div>
+
+    <nav class="fixed-nav bg-black lg:hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.5)] px-4 md:px-10">
+        <ul
+            class="uppercase font-bold grid grid-cols-6 md:grid-cols-6 justify-items-center border-b border-neutral-700">
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i
+                    class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="biodata.html"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Biodata</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i
+                    class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="contact_us.html"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Contact</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i
+                    class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="posts.html"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Posts</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i
+                    class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="freepage.html"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Performance</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <img src="img/FTI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                <img src="img/FTI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                <a href="https://fti.unai.edu/"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">FTI
+                    UNAI</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <img src="img/UNAI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                <img src="img/UNAI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                <a href="https://unai.edu/"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">UNAI</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="header" class="bg-black hidden lg:block">
+
+        <div class="flex justify-between items-center pt-4 md:pt-6 px-4 md:px-10 lg:px-20 pb-3 bg-black lg:pb-0">
+            <a href="index.html">
+                <img src="img/amg-logo.svg" alt="logo"
+                    class="w-[140px] md:w-[160px] lg:w-[180px] h-[40px] md:h-[45px] lg:h-[50px]">
+            </a>
+
+            <nav class="hidden lg:flex justify-center flex-1">
+                <ul class="uppercase font-bold grid grid-cols-6 justify-between border-b border-neutral-700">
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i
+                            class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="biodata.html"
+                            class="pb-2 group-hover:text-red-600 transition-colors duration-300">Biodata</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i
+                            class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="contact_us.html"
+                            class="pb-2 group-hover:text-red-600 transition-colors duration-300">Contact Us</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i
+                            class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="posts.html"
+                            class="pb-2 group-hover:text-red-600 transition-colors duration-300">Posts</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i
+                            class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="freepage.html"
+                            class="pb-2 group-hover:text-red-600 transition-colors duration-300">Performance</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <img src="img/FTI-logo.png"
+                            class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                        <img src="img/FTI-logored.png"
+                            class="w-5 hidden group-hover:block transition-opacity duration-300">
+                        <a href="https://fti.unai.edu/"
+                            class="group-hover:text-red-600 transition-colors duration-300">FTI
+                            UNAI</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <img src="img/UNAI-logo.png"
+                            class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                        <img src="img/UNAI-logored.png"
+                            class="w-5 hidden group-hover:block transition-opacity duration-300">
+                        <a href="https://unai.edu/"
+                            class="group-hover:text-red-600 transition-colors duration-300">UNAI</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-2 md:gap-3">
+                <button class="font-medium px-4 md:px-5 py-1 md:py-1.5 text-sm md:text-base rounded-full bg-red-700 shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out
+                    hover:bg-red-700
+                    hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                    active:scale-95">Login</button>
+                <i class="fa-sharp-duotone fa-solid fa-circle-info text-sm md:text-base"></i>
+            </div>
+        </div>
+
+        <nav class="fixed-nav bg-black lg:hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.5)] px-4 md:px-10">
+            <ul
+                class="uppercase font-bold grid grid-cols-3 md:grid-cols-6 justify-items-center border-b border-neutral-700">
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i
+                        class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="biodata.html"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Biodata</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i
+                        class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="contact_us.html"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Contact</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i
+                        class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="posts.html"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Posts</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i
+                        class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="freepage.html"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Performance</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <img src="img/FTI-logo.png"
+                        class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                    <img src="img/FTI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                    <a href="https://fti.unai.edu/"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">FTI
+                        UNAI</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <img src="img/UNAI-logo.png"
+                        class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                    <img src="img/UNAI-logored.png"
+                        class="w-5 hidden group-hover:block transition-opacity duration-300">
+                    <a href="https://unai.edu/"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">UNAI</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="relative h-52 flex items-center justify-center bg-cover bg-center">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="relative z-10 text-center">
+            <h1 class="text-4xl font-bold tracking-widest text-red-600">STUDENT REGISTRATION</h1>
+            <p class="text-neutral-300 mt-2 tracking-wide">Become part of a machine built to dominate</p>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto mt-8 mb-20 px-6">
+        <form id="regForm" class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-neutral-900/70 p-10 rounded-xl 
+                   border border-red-600/30 shadow-[0_0_25px_rgba(255,0,0,0.2)] backdrop-blur-md">
+
+            <div class="flex flex-col">
+                <label class="text-sm uppercase text-neutral-400">Full Name</label>
+                <input id="fullName" type="text" class="mt-1 bg-neutral-800 border border-neutral-600 p-3 rounded-sm 
+                    focus:border-red-600 focus:shadow-[0_0_8px_rgba(255,0,0,0.6)] outline-none transition" />
+                <p class="text-red-500 text-xs mt-1 hidden" id="error-fullName">Full Name is required.</p>
+            </div>
+
+            <div class="flex flex-col">
+                <label class="text-sm uppercase text-neutral-400">Student ID (NIM)</label>
+                <input id="nim" type="text" class="mt-1 bg-neutral-800 border border-neutral-600 p-3 rounded-sm 
+                    focus:border-red-600 focus:shadow-[0_0_8px_rgba(255,0,0,0.6)] outline-none transition" />
+                <p class="text-red-500 text-xs mt-1 hidden" id="error-nim">NIM is required.</p>
+            </div>
+
+            <div class="flex flex-col">
+                <label class="text-sm uppercase text-neutral-400">Email Address</label>
+                <input id="email" type="email" class="mt-1 bg-neutral-800 border border-neutral-600 p-3 rounded-sm 
+                    focus:border-red-600 focus:shadow-[0_0_8px_rgba(255,0,0,0.6)] outline-none transition" />
+                <p class="text-red-500 text-xs mt-1 hidden" id="error-email">Enter a valid email.</p>
+            </div>
+
+            <div class="flex flex-col">
+                <label class="text-sm uppercase text-neutral-400">Faculty / Major</label>
+                <select id="major" class="mt-1 bg-neutral-800 border border-neutral-600 p-3 rounded-sm 
+                    focus:border-red-600 focus:shadow-[0_0_8px_rgba(255,0,0,0.6)] outline-none transition">
+                    <option value="">Select Major</option>
+                    <option>Informatics Engineering</option>
+                    <option>Information Systems</option>
+                    <option>Accounting</option>
+                    <option>Philosophy</option>
+                </select>
+                <p class="text-red-500 text-xs mt-1 hidden" id="error-major">Please select a major.</p>
+            </div>
+
+            <div class="flex flex-col">
+                <label class="text-sm uppercase text-neutral-400">Date of Birth</label>
+                <input id="dob" type="date" class="mt-1 bg-neutral-800 border border-neutral-600 p-3 rounded-sm 
+                    focus:border-red-600 focus:shadow-[0_0_8px_rgba(255,0,0,0.6)] outline-none transition" />
+                <p class="text-red-500 text-xs mt-1 hidden" id="error-dob">Date of Birth is required.</p>
+            </div>
+
+            <div class="flex flex-col">
+                <label class="text-sm uppercase text-neutral-400 mb-1">Gender</label>
+                <div class="flex items-center gap-6 bg-neutral-800 border border-neutral-600 p-3 rounded-sm">
+                    <label class="flex items-center gap-2">
+                        <input type="radio" name="gender" value="Male" class="accent-red-600" /> Male
+                    </label>
+                    <label class="flex items-center gap-2">
+                        <input type="radio" name="gender" value="Female" class="accent-red-600" /> Female
+                    </label>
+                </div>
+                <p class="text-red-500 text-xs mt-1 hidden" id="error-gender">Select your gender.</p>
+            </div>
+
+            <div class="md:col-span-2 flex flex-col">
+                <label class="text-sm uppercase text-neutral-400">Address</label>
+                <textarea id="address" class="mt-1 bg-neutral-800 border border-neutral-600 p-3 rounded-sm h-28 
+                    focus:border-red-600 focus:shadow-[0_0_8px_rgba(255,0,0,0.6)] outline-none transition"></textarea>
+                <p class="text-red-500 text-xs mt-1 hidden" id="error-address">Address is required.</p>
+            </div>
+
+            <div class="md:col-span-2 flex flex-col">
+                <label class="text-sm uppercase text-neutral-400">Phone Number</label>
+                <input id="phone" type="text" class="mt-1 bg-neutral-800 border border-neutral-600 p-3 rounded-sm 
+                    focus:border-red-600 focus:shadow-[0_0_8px_rgba(255,0,0,0.6)] outline-none transition" />
+                <p class="text-red-500 text-xs mt-1 hidden" id="error-phone">
+                    Phone number must be numeric and at least 10 digits.
+                </p>
+            </div>
+
+            <div class="md:col-span-2 flex justify-center mt-6">
+                <button type="submit" class="px-12 py-3 bg-red-700 hover:bg-red-800 rounded-lg text-white tracking-widest text-lg
+                           shadow-[0_0_12px_rgba(255,0,0,0.35)] hover:shadow-[0_0_18px_rgba(255,0,0,0.6)]
+                           transition-all duration-300 active:scale-95">
+                    SUBMIT
+                </button>
+            </div>
+        </form>
+
+        <div id="successMessage"
+            class="hidden bg-green-700/30 border border-green-600 text-green-300 p-4 rounded-lg mt-6 text-center">
+            Registration Successful!
+        </div>
+    </section>
+
+    <footer>
+        <div class="bg-zinc-800 px-4 md:px-10 lg:px-20 py-12 md:py-16 lg:py-20 text-white">
+            <div class="flex justify-end mb-8 md:mb-10">
+                <a href="#header"
+                    class="flex items-center gap-2 md:gap-3 cursor-pointer transition-colors duration-300 hover:text-red-700">
+                    <p class="text-sm md:text-base">up</p>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+
+                <div>
+                    <ul class="flex gap-3 text-sm md:text-base">
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">DE</li>
+                        <li>|</li>
+                        <li class="text-red-600">EN</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="flex gap-4 md:gap-5 text-xl md:text-2xl">
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="ph ph-x-logo"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="flex flex-wrap justify-center gap-2 text-xs md:text-sm opacity-80">
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">About us |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Career |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Contact |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Provider |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Privacy |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Legal |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Accessibility |
+                        </li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Cookies</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="px-4 md:px-10 lg:px-20 py-8 md:py-10 text-xs md:text-sm opacity-70 leading-relaxed text-white">
+            <p>© 2025 Mercedes-AMG GmbH. Alle Rechte vorbehalten.</p>
+            <p>[1] Weitere Informationen zum offiziellen Kraftstoffverbrauch und den offiziellen spezifischen
+                CO₂-Emissionen neuer
+                Personenkraftwagen können dem "Leitfaden über den Kraftstoffverbrauch, die CO₂-Emissionen und den
+                Stromverbrauch" neuer
+                Personenkraftwagen entnommen werden, der an allen Verkaufsstellen und bei der Deutschen Automobil
+                Treuhand GmbH unter
+                www.dat.de unentgeltlich erhältlich ist.</p>
+            <p>[2] Die angegebenen Werte sind die ermittelten WLTP-CO2-Werte i.S.v. Art. 2 Nr. 3 Durchführungsverordnung
+                (EU)
+                2017/1153. Die Kraftstoffverbrauchswerte wurden auf Basis dieser Werte errechnet. Stromverbrauch [und
+                Reichweite]
+                wurde[n] auf Grundlage der VO 2017/1151/EU ermittelt.</p>
+            <p>[3] Alle Angaben sind vorläufig und wurden intern nach Maßgabe der Zertifizierungsmethode
+                "WLTP-Prüfverfahren"
+                ermittelt. Es liegen bislang weder bestätigte Werte einer amtlich anerkannten Prüforganisation noch eine
+                EG-Typgenehmigung noch eine Konformitätsbescheinigung mit amtlichen Werten vor. Abweichungen zwischen
+                den Angaben und
+                den amtlichen Werten sind möglich.</p>
+            <p>[4] Gemäß WLTP. Stromverbrauch und Reichweite wurden auf Grundlage der VO 2017/1151/EU ermittelt.</p>
+            <p>[5] Gemäß WLTP. Angaben zum Stromverbrauch und zur Reichweite sind vorläufig und wurden intern nach
+                Maßgabe der
+                Zertifizierungsmethode "WLTP-Prüfverfahren" ermittelt. Es liegen bislang weder bestätigte Werte vom TÜV
+                noch eine
+                EG-Typengenehmigung noch eine Konformitätsbescheinigung mit amtlichen Werten vor. Abweichungen zwischen
+                den Angaben und
+                den amtlichen Werten sind möglich.</p>
+            <p>[6] Angaben zu Kraftstoffverbrauch, CO2-Emissionen, Stromverbrauch und Reichweite sind vorläufig und
+                wurden intern nach
+                Maßgabe der Zertifizierungsmethode "WLTP-Prüfverfahren" ermittelt. Es liegen bislang weder bestätigte
+                Werte von einer
+                amtlich anerkannten Prüforganisation noch eine EG-Typgenehmigung noch eine Konformitätsbescheinigung mit
+                amtlichen
+                Werten vor. Abweichungen zwischen den Angaben und den amtlichen Werten sind möglich.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("regForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            function showError(id, condition) {
+                const el = document.getElementById(id);
+                if (condition) {
+                    el.classList.remove("hidden");
+                    isValid = false;
+                } else {
+                    el.classList.add("hidden");
+                }
+            }
+
+            const fullName = document.getElementById("fullName").value.trim();
+            const nim = document.getElementById("nim").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const major = document.getElementById("major").value;
+            const dob = document.getElementById("dob").value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const address = document.getElementById("address").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+
+            showError("error-fullName", fullName === "");
+            showError("error-nim", nim === "");
+            showError("error-email", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+            showError("error-major", major === "");
+            showError("error-dob", dob === "");
+            showError("error-gender", !gender);
+            showError("error-address", address === "");
+            showError("error-phone", !/^[0-9]{10,}$/.test(phone));
+
+            if (isValid) {
+                const success = document.getElementById("successMessage");
+                success.classList.remove("hidden");
+                setTimeout(() => success.classList.add("hidden"), 3000);
+                document.getElementById("regForm").reset();
+            }
+        });
+    </script>
+
+</body>
+</html>

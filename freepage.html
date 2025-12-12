@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance - Freepage</title>
+    <link rel="shortcut icon" href="img/favicon-merc.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        .img-hover {
+            transition: 0.4s ease;
+        }
+
+        .img-hover:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .glow-red {
+            box-shadow: 0 0 15px #c40000, 0 0 30px #c40000aa;
+        }
+
+        .fixed-nav {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <div class="lg:hidden flex justify-between items-center pt-4 md:pt-6 px-4 md:px-10 pb-3 bg-black">
+        <a href="index.html">
+            <img src="img/amg-logo.svg" alt="logo" class="w-[140px] md:w-[160px] h-[40px] md:h-[45px]">
+        </a>
+        <div class="flex items-center gap-2 md:gap-3">
+            <button class="font-medium px-4 md:px-5 py-1 md:py-1.5 text-sm md:text-base rounded-full bg-red-700 shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                transition-all duration-300 ease-in-out
+                hover:bg-red-700
+                hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                active:scale-95">Login</button>
+            <i class="fa-sharp-duotone fa-solid fa-circle-info text-sm md:text-base"></i>
+        </div>
+    </div>
+
+    <nav class="fixed-nav bg-black lg:hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.5)] px-4 md:px-10">
+        <ul
+            class="uppercase font-bold grid grid-cols-6 md:grid-cols-6 justify-items-center border-b border-neutral-700">
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i
+                    class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="biodata.html"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Biodata</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i
+                    class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="contact_us.html"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Contact</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i
+                    class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="posts.html"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Posts</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i
+                    class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="freepage.html"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Performance</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <img src="img/FTI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                <img src="img/FTI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                <a href="https://fti.unai.edu/"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">FTI
+                    UNAI</a>
+            </li>
+
+            <li
+                class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <img src="img/UNAI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                <img src="img/UNAI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                <a href="https://unai.edu/"
+                    class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">UNAI</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="header" class="bg-black hidden lg:block">
+        <div class="flex justify-between items-center pt-4 md:pt-6 px-4 md:px-10 lg:px-20 pb-3 bg-black lg:pb-0">
+            <a href="index.html">
+                <img src="img/amg-logo.svg" alt="logo"
+                    class="w-[140px] md:w-[160px] lg:w-[180px] h-[40px] md:h-[45px] lg:h-[50px]">
+            </a>
+
+            <nav class="hidden lg:flex justify-center flex-1">
+                <ul class="uppercase font-bold grid grid-cols-6 justify-between border-b border-neutral-700">
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i
+                            class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="biodata.html"
+                            class="pb-2 group-hover:text-red-600 transition-colors duration-300">Biodata</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i
+                            class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="contact_us.html"
+                            class="pb-2 group-hover:text-red-600 transition-colors duration-300">Contact Us</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i
+                            class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="posts.html"
+                            class="pb-2 group-hover:text-red-600 transition-colors duration-300">Posts</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i
+                            class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="freepage.html"
+                            class="pb-2 group-hover:text-red-600 transition-colors duration-300">Performance</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <img src="img/FTI-logo.png"
+                            class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                        <img src="img/FTI-logored.png"
+                            class="w-5 hidden group-hover:block transition-opacity duration-300">
+                        <a href="https://fti.unai.edu/"
+                            class="group-hover:text-red-600 transition-colors duration-300">FTI
+                            UNAI</a>
+                    </li>
+
+                    <li
+                        class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <img src="img/UNAI-logo.png"
+                            class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                        <img src="img/UNAI-logored.png"
+                            class="w-5 hidden group-hover:block transition-opacity duration-300">
+                        <a href="https://unai.edu/"
+                            class="group-hover:text-red-600 transition-colors duration-300">UNAI</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-2 md:gap-3">
+                <button class="font-medium px-4 md:px-5 py-1 md:py-1.5 text-sm md:text-base rounded-full bg-red-700 shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out
+                    hover:bg-red-700
+                    hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                    active:scale-95">Login</button>
+                <i class="fa-sharp-duotone fa-solid fa-circle-info text-sm md:text-base"></i>
+            </div>
+        </div>
+
+        <nav class="fixed-nav bg-black lg:hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.5)] px-4 md:px-10">
+            <ul
+                class="uppercase font-bold grid grid-cols-3 md:grid-cols-6 justify-items-center border-b border-neutral-700">
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i
+                        class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="biodata.html"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Biodata</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i
+                        class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="contact_us.html"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Contact</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i
+                        class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="posts.html"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Posts</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i
+                        class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="freepage.html"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Performance</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <img src="img/FTI-logo.png"
+                        class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                    <img src="img/FTI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                    <a href="https://fti.unai.edu/"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">FTI
+                        UNAI</a>
+                </li>
+
+                <li
+                    class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <img src="img/UNAI-logo.png"
+                        class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                    <img src="img/UNAI-logored.png"
+                        class="w-5 hidden group-hover:block transition-opacity duration-300">
+                    <a href="https://unai.edu/"
+                        class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">UNAI</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="relative w-full h-[65vh] bg-cover bg-center"
+        style="background-image: url('https://images.hdqwalls.com/wallpapers/mercedes-amg-gt-black-series-5k-2020-5g.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black flex items-center justify-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-center tracking-wider fade-up">
+                MERCEDES-AMG PERFORMANCE HUB
+            </h1>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold mb-8 fade-up text-red-600">⚡ Performance Highlights</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div
+                class="bg-red-900/20 p-6 rounded-xl backdrop-blur-lg shadow-xl hover:scale-105 transition fade-up delay-1 border border-red-900/40">
+                <h3 class="text-xl font-bold text-red-500">AMG GT Black Series</h3>
+                <p class="text-gray-300 mt-2">720 HP – Nürburgring Record</p>
+                <p class="mt-4 text-sm text-gray-400">0–100 km/h 3.2s • Top Speed 325 km/h</p>
+            </div>
+
+            <div
+                class="bg-red-900/20 p-6 rounded-xl backdrop-blur-lg shadow-xl hover:scale-105 transition fade-up delay-2 border border-red-900/40">
+                <h3 class="text-xl font-bold text-red-500">AMG A45S</h3>
+                <p class="text-gray-300 mt-2">421 HP – Strongest 2.0L Engine</p>
+                <p class="mt-4 text-sm text-gray-400">0–100 km/h 3.9s • Top Speed 270 km/h</p>
+            </div>
+
+            <div
+                class="bg-red-900/20 p-6 rounded-xl backdrop-blur-lg shadow-xl hover:scale-105 transition fade-up delay-3 border border-red-900/40">
+                <h3 class="text-xl font-bold text-red-500">AMG C63 Hybrid</h3>
+                <p class="text-gray-300 mt-2">680 HP – F1 Tech Hybrid</p>
+                <p class="mt-4 text-sm text-gray-400">0–100 km/h 3.4s • Top Speed 280 km/h</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold mb-8 fade-up text-red-600">📸 AMG Gallery</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-auto grid-flow-dense fade-up">
+            <div
+                class="relative col-span-2 row-span-2 overflow-hidden rounded-xl shadow-lg glow-red transition-transform duration-300 hover:scale-105">
+                <img src="img/gallery-one.jpg" class="w-full h-full object-cover" />
+            </div>
+
+            <div
+                class="relative overflow-hidden rounded-xl shadow-lg glow-red transition-transform duration-300 hover:scale-105">
+                <img src="img/gallery-two.jpg" class="w-full h-full object-cover" />
+            </div>
+
+            <div
+                class="relative overflow-hidden rounded-xl shadow-lg glow-red transition-transform duration-300 hover:scale-105">
+                <img src="img/gallery-three.webp" class="w-full h-full object-cover" />
+            </div>
+
+            <div
+                class="relative col-span-2 overflow-hidden rounded-xl shadow-lg glow-red transition-transform duration-300 hover:scale-105">
+                <img src="img/gallery-four.jpg" class="w-full h-full object-cover" />
+            </div>
+
+            <div
+                class="relative overflow-hidden rounded-xl shadow-lg glow-red transition-transform duration-300 hover:scale-105">
+                <img src="img/gallery-five.jpg" class="w-full h-full object-cover" />
+            </div>
+
+            <div
+                class="relative overflow-hidden rounded-xl shadow-lg glow-red transition-transform duration-300 hover:scale-105">
+                <img src="img/gallery-six.cms" class="w-full h-full object-cover" />
+            </div>
+
+            <div
+                class="relative col-span-2 row-span-2 overflow-hidden rounded-xl shadow-lg glow-red transition-transform duration-300 hover:scale-105">
+                <img src="img/gallery-seven.webp" class="w-full h-full object-cover" />
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold mb-8 fade-up text-red-600">🎥 AMG Video Experience</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 fade-up justify-items-center">
+            <div class="w-full md:w-[90%] aspect-video rounded-xl overflow-hidden shadow-lg glow-red">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQDWdFbpBMo?si=akU2a5I0SFyYcOzc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+
+            <div class="w-full md:w-[90%] aspect-video rounded-xl overflow-hidden shadow-lg glow-red">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/tUVd7uo9wvY?si=XGbulJZshdFXtSQw"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16 text-center fade-up">
+        <h2 class="text-3xl font-bold mb-6 text-red-600">🔊 AMG Engine Sound</h2>
+        <p class="text-gray-400 mb-8">Listen to the brutal roar of the AMG engine.</p>
+
+        <div class="flex flex-wrap justify-center gap-6">
+            <button onclick="playSound('start')"
+                class="px-6 py-3 bg-red-700 rounded-lg font-semibold hover:bg-red-800 transition glow-red">
+                Engine one
+            </button>
+
+            <button onclick="playSound('rev')"
+                class="px-6 py-3 bg-gray-800 rounded-lg font-semibold hover:bg-gray-900 transition glow-red">
+                Engine two
+            </button>
+
+            <button onclick="playSound('downshift')"
+                class="px-6 py-3 bg-yellow-600 rounded-lg font-semibold hover:bg-yellow-700 transition glow-red">
+                Engine Three
+            </button>
+
+            <button onclick="stopAll()"
+                class="px-6 py-3 bg-red-900 rounded-lg font-semibold hover:bg-red-950 transition glow-red">
+                Stop the Engine
+            </button>
+        </div>
+
+        <audio id="start" src="audio/idle.mp3"></audio>
+        <audio id="rev" src="audio/rev.mp3"></audio>
+        <audio id="downshift" src="audio/downshift.mp3"></audio>
+    </section>
+
+    <footer>
+        <div class="bg-zinc-800 px-4 md:px-10 lg:px-20 py-12 md:py-16 lg:py-20 text-white">
+            <div class="flex justify-end mb-8 md:mb-10">
+                <a href="#header"
+                    class="flex items-center gap-2 md:gap-3 cursor-pointer transition-colors duration-300 hover:text-red-700">
+                    <p class="text-sm md:text-base">up</p>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+
+                <div>
+                    <ul class="flex gap-3 text-sm md:text-base">
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">DE</li>
+                        <li>|</li>
+                        <li class="text-red-600">EN</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="flex gap-4 md:gap-5 text-xl md:text-2xl">
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="ph ph-x-logo"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="flex flex-wrap justify-center gap-2 text-xs md:text-sm opacity-80">
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">About us |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Career |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Contact |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Provider |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Privacy |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Legal |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Accessibility |
+                        </li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Cookies</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="px-4 md:px-10 lg:px-20 py-8 md:py-10 text-xs md:text-sm opacity-70 leading-relaxed text-white">
+            <p>© 2025 Mercedes-AMG GmbH. Alle Rechte vorbehalten.</p>
+            <p>[1] Weitere Informationen zum offiziellen Kraftstoffverbrauch und den offiziellen spezifischen
+                CO₂-Emissionen neuer
+                Personenkraftwagen können dem "Leitfaden über den Kraftstoffverbrauch, die CO₂-Emissionen und den
+                Stromverbrauch" neuer
+                Personenkraftwagen entnommen werden, der an allen Verkaufsstellen und bei der Deutschen Automobil
+                Treuhand GmbH unter
+                www.dat.de unentgeltlich erhältlich ist.</p>
+            <p>[2] Die angegebenen Werte sind die ermittelten WLTP-CO2-Werte i.S.v. Art. 2 Nr. 3 Durchführungsverordnung
+                (EU)
+                2017/1153. Die Kraftstoffverbrauchswerte wurden auf Basis dieser Werte errechnet. Stromverbrauch [und
+                Reichweite]
+                wurde[n] auf Grundlage der VO 2017/1151/EU ermittelt.</p>
+            <p>[3] Alle Angaben sind vorläufig und wurden intern nach Maßgabe der Zertifizierungsmethode
+                "WLTP-Prüfverfahren"
+                ermittelt. Es liegen bislang weder bestätigte Werte einer amtlich anerkannten Prüforganisation noch eine
+                EG-Typgenehmigung noch eine Konformitätsbescheinigung mit amtlichen Werten vor. Abweichungen zwischen
+                den Angaben und
+                den amtlichen Werten sind möglich.</p>
+            <p>[4] Gemäß WLTP. Stromverbrauch und Reichweite wurden auf Grundlage der VO 2017/1151/EU ermittelt.</p>
+            <p>[5] Gemäß WLTP. Angaben zum Stromverbrauch und zur Reichweite sind vorläufig und wurden intern nach
+                Maßgabe der
+                Zertifizierungsmethode "WLTP-Prüfverfahren" ermittelt. Es liegen bislang weder bestätigte Werte vom TÜV
+                noch eine
+                EG-Typengenehmigung noch eine Konformitätsbescheinigung mit amtlichen Werten vor. Abweichungen zwischen
+                den Angaben und
+                den amtlichen Werten sind möglich.</p>
+            <p>[6] Angaben zu Kraftstoffverbrauch, CO2-Emissionen, Stromverbrauch und Reichweite sind vorläufig und
+                wurden intern nach
+                Maßgabe der Zertifizierungsmethode "WLTP-Prüfverfahren" ermittelt. Es liegen bislang weder bestätigte
+                Werte von einer
+                amtlich anerkannten Prüforganisation noch eine EG-Typgenehmigung noch eine Konformitätsbescheinigung mit
+                amtlichen
+                Werten vor. Abweichungen zwischen den Angaben und den amtlichen Werten sind möglich.</p>
+        </div>
+    </footer>
+
+    <script>
+        const sounds = {
+            start: document.getElementById('start'),
+            rev: document.getElementById('rev'),
+            downshift: document.getElementById('downshift')
+        };
+
+        function stopAll() {
+            for (let key in sounds) {
+                sounds[key].pause();
+                sounds[key].currentTime = 0;
+            }
+        }
+
+        function playSound(id) {
+            stopAll();
+
+            const sound = sounds[id];
+            sound.currentTime = 0;
+            sound.play();
+        }
+    </script>
+</body>
+</html>

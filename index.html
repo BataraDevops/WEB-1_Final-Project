@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-AMG Homepage</title>
+    <link rel="shortcut icon" href="img/favicon-merc.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .fixed-nav {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans bg-black text-white">
+    <div class="lg:hidden flex justify-between items-center pt-4 md:pt-6 px-4 md:px-10 pb-3 bg-black">
+        <a href="index.html">
+            <img src="img/amg-logo.svg" alt="logo" class="w-[140px] md:w-[160px] h-[40px] md:h-[45px]">
+        </a>
+        <div class="flex items-center gap-2 md:gap-3">
+            <button class="font-medium px-4 md:px-5 py-1 md:py-1.5 text-sm md:text-base rounded-full bg-red-700 shadow-[0_0_12px_rgba(220,38,38,0.6)]
+            transition-all duration-300 ease-in-out
+            hover:bg-red-700
+            hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+            active:scale-95">Login</button>
+            <i class="fa-sharp-duotone fa-solid fa-circle-info text-sm md:text-base"></i>
+        </div>
+    </div>
+    <nav class="fixed-nav bg-black lg:hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.5)] px-4 md:px-10">
+        <ul class="uppercase font-bold grid grid-cols-6 md:grid-cols-6 justify-items-center border-b border-neutral-700">
+            <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="biodata.html" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Biodata</a>
+            </li>
+
+            <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="contact_us.html" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Contact</a>
+            </li>
+
+            <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="posts.html" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Posts</a>
+            </li>
+
+            <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <i class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                <a href="freepage.html" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Performance</a>
+            </li>
+
+            <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <img src="img/FTI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                <img src="img/FTI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                <a href="https://fti.unai.edu/" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">FTI
+                    UNAI</a>
+            </li>
+
+            <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                <img src="img/UNAI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                <img src="img/UNAI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                <a href="https://unai.edu/" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">UNAI</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="header" class="bg-black hidden lg:block">
+        <div class="flex justify-between items-center pt-4 md:pt-6 px-4 md:px-10 lg:px-20 pb-3 bg-black lg:pb-0">
+            <a href="index.html">
+                <img src="img/amg-logo.svg" alt="logo" class="w-[140px] md:w-[160px] lg:w-[180px] h-[40px] md:h-[45px] lg:h-[50px]">
+            </a>
+
+            <nav class="hidden lg:flex justify-center flex-1">
+                <ul class="uppercase font-bold grid grid-cols-6 justify-between border-b border-neutral-700">
+                    <li class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="biodata.html" class="pb-2 group-hover:text-red-600 transition-colors duration-300">Biodata</a>
+                    </li>
+
+                    <li class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="contact_us.html" class="pb-2 group-hover:text-red-600 transition-colors duration-300">Contact Us</a>
+                    </li>
+
+                    <li class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="posts.html" class="pb-2 group-hover:text-red-600 transition-colors duration-300">Posts</a>
+                    </li>
+
+                    <li class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <i class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300"></i>
+                        <a href="freepage.html" class="pb-2 group-hover:text-red-600 transition-colors duration-300">Performance</a>
+                    </li>
+
+                    <li class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <img src="img/FTI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                        <img src="img/FTI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                        <a href="https://fti.unai.edu/" class="group-hover:text-red-600 transition-colors duration-300">FTI UNAI</a>
+                    </li>
+
+                    <li class="group flex flex-col relative items-center gap-y-2 cursor-pointer transition-all duration-300">
+                        <img src="img/UNAI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                        <img src="img/UNAI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                        <a href="https://unai.edu/" class="group-hover:text-red-600 transition-colors duration-300">UNAI</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-2 md:gap-3">
+                <button class="font-medium px-4 md:px-5 py-1 md:py-1.5 text-sm md:text-base rounded-full bg-red-700 shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                transition-all duration-300 ease-in-out
+                hover:bg-red-700
+                hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                active:scale-95">Login</button>
+                <i class="fa-sharp-duotone fa-solid fa-circle-info text-sm md:text-base"></i>
+            </div>
+        </div>
+
+        <nav class="fixed-nav bg-black lg:hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.5)] px-4 md:px-10">
+            <ul class="uppercase font-bold grid grid-cols-3 md:grid-cols-6 justify-items-center border-b border-neutral-700">
+                <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i class="fa-sharp-duotone fa-solid fa-id-card group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="biodata.html" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Biodata</a>
+                </li>
+
+                <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i class="fa-sharp-duotone fa-solid fa-headset group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="contact_us.html" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Contact</a>
+                </li>
+
+                <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i class="fa-sharp-duotone fa-solid fa-network-wired group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="posts.html" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Posts</a>
+                </li>
+
+                <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <i class="fa-sharp-duotone fa-solid fa-gauge-high group-hover:text-red-600 transition-colors duration-300 text-lg"></i>
+                    <a href="freepage.html" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">Performance</a>
+                </li>
+
+                <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <img src="img/FTI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                    <img src="img/FTI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                    <a href="https://fti.unai.edu/" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">FTI
+                        UNAI</a>
+                </li>
+
+                <li class="group flex flex-col relative items-center gap-y-1 cursor-pointer transition-all duration-300 py-3">
+                    <img src="img/UNAI-logo.png" class="w-5 text-white group-hover:hidden transition-opacity duration-300">
+                    <img src="img/UNAI-logored.png" class="w-5 hidden group-hover:block transition-opacity duration-300">
+                    <a href="https://unai.edu/" class="group-hover:text-red-600 transition-colors duration-300 text-[10px] md:text-xs pb-2">UNAI</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-15">
+        <section class="relative">
+            <div class="lg:absolute lg:top-28 lg:left-20 bg-black lg:bg-black/70 w-full lg:w-1/3 p-6 md:p-8 lg:p-6 lg:z-10">
+                <p class="text-xs md:text-sm">Mercedes-AMG GT 4-Door Coupe prototype</p>
+                <hr class="border-red-700 w-8 md:w-10 mt-3 md:mt-4">
+                <h1 class="uppercase font-extrabold text-xl md:text-2xl lg:text-4xl mt-4 md:mt-6 leading-tight">
+                    Las Vegas premiere for a new dimension of performance
+                </h1>
+                <p class="inline-flex bg-red-700 border border-red-700 px-4 md:px-6 py-2 md:py-3 mt-4 md:mt-6 cursor-pointer text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out
+                    hover:bg-red-700
+                    hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                    active:scale-95">
+                    Watch video now
+                </p>
+            </div>
+
+            <div class="relative h-[50vh] md:h-[60vh] lg:h-screen bg-cover bg-center"
+                style="background-image: url('img/BradPittandGeorgeRussleinfrontofthenewM.jpg');">
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 lg:py-24 font-bold">
+            <div class="md:hidden">
+                <div id="scrollContainer" class="overflow-x-auto px-4 scrollbar-hide scroll-smooth">
+                    <div class="flex gap-4 w-max pb-2">
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/imgbgred1.jpeg"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h2 class="text-white text-lg mt-4">Find the AMG model that's right for you.</h2>
+                        </div>
+
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/imgbgred2.jpeg"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h2 class="text-white text-lg mt-4">Purchase your individual vehicle.</h2>
+                        </div>
+
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/imgbgred3.webp"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h2 class="text-white text-lg mt-4">Find a dealer near you.</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center gap-2 mt-6">
+                    <div class="indicator active w-6 h-4 bg-red-700 cursor-pointer transition-all duration-300 hover:bg-red-800 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="0"></div>
+                    <div class="indicator w-6 h-4 bg-gray-600 cursor-pointer transition-all duration-300 hover:bg-gray-500 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="1"></div>
+                    <div class="indicator w-6 h-4 bg-gray-600 cursor-pointer transition-all duration-300 hover:bg-gray-500 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="2"></div>
+                </div>
+            </div>
+
+            <div class="hidden md:grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 px-4 md:px-10 lg:px-20">
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/imgbgred1.jpeg" class="w-full transition-opacity duration-300 hover:opacity-90">
+                    <h2 class="text-white text-xl lg:text-2xl mt-4 md:mt-6">Find the AMG model that's right for you.
+                    </h2>
+                </div>
+
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/imgbgred2.jpeg" class="w-full transition-opacity duration-300 hover:opacity-90">
+                    <h2 class="text-white text-xl lg:text-2xl mt-4 md:mt-6">Purchase your individual vehicle.</h2>
+                </div>
+
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/imgbgred3.webp" class="w-full transition-opacity duration-300 hover:opacity-90">
+                    <h2 class="text-white text-xl lg:text-2xl mt-4 md:mt-6">Find a dealer near you.</h2>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex justify-center px-4 md:px-10 lg:px-20">
+            <video src="video/video.mp4" controls class="w-full max-w-[90%] h-auto md:h-[60vh] lg:h-lvh"></video>
+        </div>
+
+        <section class="p-4 md:p-8 lg:p-14">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-x-10 mb-6 md:mb-10 lg:mb-20">
+                <div class="flex flex-col justify-center max-w-full md:max-w-[550px] order-1">
+                    <p class="tracking-wide text-xs md:text-sm mb-2 md:mb-3">A new dimension of performance</p>
+                    <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-5">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase leading-tight mb-4 md:mb-6">
+                        Exclusive walkaround</h2>
+                    <p class="mb-4 md:mb-6 text-sm md:text-base">
+                        The performance of the future is on its way: our Chief Engineer AMG.EA platform Oliver Wiech
+                        provides you with an
+                        exclusive overview of the many innovative highlights of this revolutionary concept car in a
+                        Private Lounge walkaround.
+                    </p>
+                    <p
+                        class="bg-red-700 px-6 md:px-8 py-3 md:py-4 cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.9)] active:scale-95">
+                        Register and watch now
+                    </p>
+                </div>
+                <div class="transition-transform duration-300 hover:scale-[1.02] order-2">
+                    <img src="img/EAplatformOliverWiech.avif"
+                        class="w-full object-cover min-h-[300px] md:min-h-[400px]">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-x-10 mb-6 md:mb-10 lg:mb-20">
+                <div class="transition-transform duration-300 hover:scale-[1.02] order-2 lg:order-1">
+                    <img src="img/AMGConceptXXingarage.jpg" class="w-full object-cover min-h-[300px] md:min-h-[450px]">
+                </div>
+                <div class="flex flex-col justify-center max-w-full md:max-w-[550px] order-1 lg:order-2">
+                    <p class="text-xs md:text-sm mb-2 md:mb-3">Making-of</p>
+                    <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-5">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-4 md:mb-6">NEW RECORD & NO LIMITS
+                    </h2>
+                    <p class="mb-4 md:mb-6 text-sm md:text-base">
+                        In our four-part series "Record Drive", we uncover the challenges behind a record unlike any
+                        other:
+                        driving around the world in under 8 days, more than 5,000 km per day, stopping only to charge.
+                        The ambition
+                        is clear: to push electric performance into a new dimension and show what Mercedes-AMG.EA is
+                        truly capable of.
+                    </p>
+                    <p
+                        class="bg-red-700 px-6 md:px-8 py-3 md:py-4 cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.9)] active:scale-95">
+                        Watch now
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-x-10 mb-6 md:mb-10 lg:mb-20">
+                <div class="flex flex-col justify-center ml-0 md:ml-6 lg:ml-12 order-1">
+                    <p class="text-xs md:text-sm mb-2 md:mb-3">AMG Private Lounge Group</p>
+                    <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-5">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-4 md:mb-6">AMG.EA</h2>
+                    <p class="mb-4 md:mb-6 text-sm md:text-base">
+                        Welcome to the AMG.EA group! Explore AMG Electric Architecture: fully electric, independent, and
+                        uncompromisingly
+                        focused on performance. From "Affasterbach," embark on a journey into a new era rich with
+                        technology, design, and emotions.
+                    </p>
+                    <p
+                        class="bg-red-700 px-6 md:px-8 py-3 md:py-4 cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.9)] active:scale-95">
+                        Register now and join the group
+                    </p>
+                </div>
+                <div class="transition-transform duration-300 hover:scale-[1.02] order-2">
+                    <img src="img/theAMG_EAgroup.avif" class="w-full object-cover min-h-[300px] md:min-h-[450px]">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-x-10">
+                <div class="transition-transform duration-300 hover:scale-[1.02] order-2 lg:order-1">
+                    <img src="img/PLmembergathering.avif" class="w-full object-cover min-h-[300px] md:min-h-[500px]">
+                </div>
+                <div class="flex flex-col justify-center max-w-full md:max-w-[600px] order-1 lg:order-2">
+                    <p class="text-xs md:text-sm mb-2 md:mb-3">PL Hubs & Member Gatherings</p>
+                    <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-5">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase mb-4 md:mb-6">
+                        EXPERIENCE EXCITING GATHERINGS IN YOUR REGION
+                    </h2>
+                    <p class="mb-4 md:mb-6 text-sm md:text-base">
+                        As a member of a Private Lounge Hub, you can easily connect with other AMG Private Lounge
+                        Members in your region. If you
+                        enjoy sharing your passion in person, you'll have the chance to meet your local AMG Community at
+                        a variety of Member
+                        Gatherings, exchange ideas, and spend dynamic days together. To get involved in the PL Hubs and
+                        take part in Member
+                        Gatherings, simply sign up to the Private Lounge and register your vehicle.
+                    </p>
+                    <p
+                        class="bg-red-700 px-6 md:px-8 py-3 md:py-4 cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.9)] active:scale-95">
+                        Log in & register vehicle
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex flex-col items-center text-center py-12 md:py-16 lg:py-20 px-4">
+            <h1 class="font-extrabold text-2xl md:text-3xl max-w-full md:max-w-4xl mb-6 md:mb-10">
+                Discover even more in our exclusive Private Lounge Community!
+            </h1>
+
+            <div class="flex flex-col md:flex-row gap-3 md:gap-5 w-full md:w-auto">
+                <p class="bg-red-700 px-6 py-3 cursor-pointer text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                transition-all duration-300 ease-in-out
+                hover:bg-red-700
+                hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                active:scale-95">Register now</p>
+                <p class="border px-6 py-3 cursor-pointer text-sm md:text-base transition-all duration-300 ease-in-out hover:border-red-700
+                hover:bg-red-700
+                hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                active:scale-95">Login now</p>
+            </div>
+        </div>
+
+        <section class="px-4 md:px-10 lg:px-20 py-12 md:py-16 lg:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 mb-6 md:mb-10 lg:mb-16">
+                <div class="transition-transform duration-300 hover:scale-[1.02] order-2 lg:order-1">
+                    <img src="img/CONCEPTAMGGTXX.jpg" class="w-full">
+                </div>
+                <div class="flex flex-col justify-center order-1 lg:order-2">
+                    <p class="text-sm md:text-base mb-2 md:mb-3">A new dimension of performance</p>
+                    <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-5">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl uppercase font-bold mb-4 md:mb-6">CONCEPT AMG GT XX</h2>
+                    <p class="mb-4 md:mb-6 text-sm md:text-base">The performance of the future is on its way — with
+                        exceptional technology, supreme endurance, hyper-fast charging and a
+                        highly emotional design. The CONCEPT AMG GT XX is a pioneering technology programme that offers
+                        an
+                        impressive insight into a forthcoming four-door series-production sports car from Mercedes-AMG.
+                    </p>
+                    <p
+                        class="bg-red-700 px-6 py-3 cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.9)] active:scale-95">
+                        Discover now
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 mb-6 md:mb-10 lg:mb-16">
+                <div class="flex flex-col justify-center order-1">
+                    <p class="text-sm md:text-base mb-2 md:mb-3">Exclusive small series</p>
+                    <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-5">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl uppercase font-bold mb-4 md:mb-6">THE MERCEDES-AMG
+                        PURESPEED</h2>
+                    <p class="mb-4 md:mb-6 text-sm md:text-base">
+                        The Mercedes-AMG PureSpeed is an uncompromising performance car offering an unforgettable
+                        open-top
+                        driving experience. A homage to motorsport that celebrates the motorsport tradition of
+                        Mercedes-Benz - with exciting
+                        racing car design, innovative materials and modern technology.
+                    </p>
+                    <p
+                        class="bg-red-700 px-6 py-3 cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.9)] active:scale-95">
+                        To the vehicle
+                    </p>
+                </div>
+                <div class="transition-transform duration-300 hover:scale-[1.02] order-2">
+                    <img src="img/Mercedes-AMGPureSpeedconcept.avif" class="w-full">
+                    <p class="text-xs md:text-sm mt-2 opacity-70">Energieverbrauch kombiniert: 13.7 l/100 km |
+                        CO₂-Emissionen kombiniert: 312 g/km | CO₂-Klasse: G | <u
+                            class="hover:text-red-700 transition-colors duration-300 cursor-pointer">Emissionsangabe</u>
+                        |
+                        [1,2]</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 mb-6 md:mb-10 lg:mb-16">
+                <div class="transition-transform duration-300 hover:scale-[1.02] order-2 lg:order-1">
+                    <img src="img/womangetsoutofacar.avif" class="w-full">
+                    <p class="text-xs md:text-sm mt-2 opacity-70">Energieverbrauch kombiniert: 14 l/100 km |
+                        CO₂-Emissionen
+                        kombiniert: 319 g/km | CO₂-Klasse: G | <u
+                            class="hover:text-red-700 transition-colors duration-300 cursor-pointer">Emissionsangabe</u>
+                        |
+                        [1,2]</p>
+                </div>
+                <div class="flex flex-col justify-center order-1 lg:order-2">
+                    <p class="text-sm md:text-base mb-2 md:mb-3">Location Affalterbach</p>
+                    <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-5">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl uppercase font-bold mb-4 md:mb-6">WELCOME TO
+                        AFFALTERBACH — THE HOME OF AMG</h2>
+                    <p class="mb-4 md:mb-6 text-sm md:text-base">
+                        Affalterbach. Home to the World's Fastest Family — the people who put their mark on AMG and make
+                        it
+                        extraordinary. Where highest engineering craft is a mindset and passion an identity. Anyone who
+                        visits this place becomes
+                        part of the fascination. Welcome to the family. Welcome to the Home of AMG.
+                    </p>
+                    <p
+                        class="bg-red-700 px-6 py-3 cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.9)] active:scale-95">
+                        Learn more
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
+                <div class="flex flex-col justify-center order-1">
+                    <p class="text-sm md:text-base mb-2 md:mb-3">Classic</p>
+                    <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-5">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl uppercase font-bold mb-4 md:mb-6">
+                        The official AMG CLASSIC Certificate of Authenticity
+                    </h2>
+                    <p class="mb-4 md:mb-6 text-sm md:text-base">AMG isn't always AMG - and in the car world, people
+                        unfortunately don't always put their cards on the table. That's why
+                        we have the official AMG CLASSIC Certificate of Authenticity, so you can be sure your vehicle
+                        has
+                        received an original AMG modification.</p>
+                    <p
+                        class="bg-red-700 px-6 py-3 cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                    transition-all duration-300 ease-in-out hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.9)] active:scale-95">
+                        Learn more
+                    </p>
+                </div>
+                <div class="transition-transform duration-300 hover:scale-[1.02] order-2">
+                    <img src="img/Mercedes-AMGSLRoadster.avif" class="w-full">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 lg:py-24">
+            <div class="md:hidden">
+                <div id="scrollContainer2" class="overflow-x-auto px-4 scrollbar-hide scroll-smooth">
+                    <div class="flex gap-4 w-max pb-2">
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/Mercedes-AMGdrifting.jpeg"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h3 class="text-xl mt-6 font-bold">Experience our vehicles</h3>
+                            <p class="opacity-80 mt-2 font-semibold text-sm">
+                                Experience unique moments in the most exciting places in Europe and on the most famous
+                                racetracks in
+                                the world — that is #TheAMGExperience.
+                            </p>
+                        </div>
+
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/Mercedes-AMGGT3andGT4.jpeg"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h3 class="text-xl mt-6 font-bold">Motorsport is what drives us</h3>
+                            <p class="opacity-80 mt-2 font-semibold text-sm">
+                                Motivated by a belief and desire to succeed, Hans Werner Aufrecht and Erhard Melcher
+                                laid the
+                                foundation for AMG back in 1967. Boundless passion for motorsports paved the way for
+                                legendary achievements and continues to
+                                leave its mark on the spirit of our brand to the present day.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center gap-2 mt-6">
+                    <div class="indicator2 active w-6 h-4 bg-red-700 cursor-pointer transition-all duration-300 hover:bg-red-800 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="0"></div>
+                    <div class="indicator2 w-6 h-4 bg-gray-600 cursor-pointer transition-all duration-300 hover:bg-gray-500 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="1"></div>
+                </div>
+            </div>
+
+            <div class="hidden md:grid md:grid-cols-2 gap-6 md:gap-10 px-4 md:px-10 lg:px-20">
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/Mercedes-AMGdrifting.jpeg" class="w-full">
+                    <h3 class="text-xl md:text-2xl mt-6 md:mt-8 font-bold">Experience our vehicles</h3>
+                    <p class="opacity-80 mt-2 md:mt-3 font-semibold text-sm md:text-base">
+                        Experience unique moments in the most exciting places in Europe and on the most famous
+                        racetracks in
+                        the world — that is #TheAMGExperience.
+                    </p>
+                </div>
+
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/Mercedes-AMGGT3andGT4.jpeg" class="w-full">
+                    <h3 class="text-xl md:text-2xl mt-6 md:mt-8 font-bold">Motorsport is what drives us</h3>
+                    <p class="opacity-80 mt-2 md:mt-3 font-semibold text-sm md:text-base">
+                        Motivated by a belief and desire to succeed, Hans Werner Aufrecht and Erhard Melcher laid the
+                        foundation for AMG back in 1967. Boundless passion for motorsports paved the way for legendary
+                        achievements and continues to
+                        leave its mark on the spirit of our brand to the present day.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative">
+            <div
+                class="lg:absolute lg:top-28 lg:left-20 bg-black lg:bg-black/70 w-full lg:w-[35%] p-6 md:p-8 lg:p-10 text-white lg:z-10">
+                <p class="text-xs md:text-sm">Newsletter</p>
+                <hr class="border-red-700 w-8 md:w-10 my-3 md:my-4">
+
+                <h1 class="text-2xl md:text-3xl font-extrabold leading-tight">
+                    CURRENT UPDATES FROM AMG
+                </h1>
+
+                <p class="opacity-80 mt-4 md:mt-5 mb-4 md:mb-5 text-sm md:text-base">
+                    Stay up-to-date on the latest from the high-speed, luxurious world of AMG: With our newsletter for
+                    Private Lounge
+                    Members, you receive regular and unusual insights — exclusive vehicle presentations, exciting
+                    stories, attractive offers
+                    or special background reports. Simply sign up, and never miss out again.
+                </p>
+
+                <p class="bg-red-700 px-6 py-3 uppercase cursor-pointer w-fit text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+                transition-all duration-300 ease-in-out
+                hover:bg-red-700
+                hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+                active:scale-95">
+                    Learn more
+                </p>
+            </div>
+
+            <div class="relative h-[50vh] md:h-[60vh] lg:h-screen bg-cover bg-center"
+                style="background-image: url('img/womansitsonadesk.jpeg');">
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 lg:py-24">
+            <div class="px-4 md:px-10 lg:px-20 mb-8 md:mb-10">
+                <hr class="border-red-700 w-8 md:w-10 mb-3 md:mb-4">
+                <h1 class="uppercase text-2xl md:text-3xl lg:text-4xl font-extrabold">Experience the fascination of AMG
+                </h1>
+            </div>
+
+            <div class="md:hidden">
+                <div id="scrollContainer3" class="overflow-x-auto px-4 scrollbar-hide scroll-smooth">
+                    <div class="flex gap-4 w-max pb-2">
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/ConceptAMGGTXXcornering.jpg"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h3 class="mt-3 font-bold text-xl">CONCEPT AMG GT XX</h3>
+                        </div>
+
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/F1Mercedes.jpg"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h3 class="mt-3 font-bold text-xl">F1® The Movie</h3>
+                        </div>
+
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/TheAMGONE.avif"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h3 class="mt-3 font-bold text-xl">INSIDE AMG — All Episodes</h3>
+                        </div>
+
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/Manufakturlettering.avif"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h3 class="mt-3 font-bold text-xl">MANUFAKTUR</h3>
+                        </div>
+
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/Mercedes-AMGEQS.avif"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h3 class="mt-3 font-bold text-xl">Mercedes-AMG MBUX SOUND DRIVE</h3>
+                        </div>
+
+                        <div class="w-[85vw] flex-shrink-0 transition-transform duration-300 hover:scale-[1.02]">
+                            <img src="img/Mercedes-AMGSLRoadster.avif"
+                                class="w-full transition-opacity duration-300 hover:opacity-90">
+                            <h3 class="mt-3 font-bold text-xl">History of Mercedes SL</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center gap-2 mt-6">
+                    <div class="indicator3 active w-6 h-4 bg-red-700 cursor-pointer transition-all duration-300 hover:bg-red-800 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="0"></div>
+                    <div class="indicator3 w-6 h-4 bg-gray-600 cursor-pointer transition-all duration-300 hover:bg-gray-500 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="1"></div>
+                    <div class="indicator3 w-6 h-4 bg-gray-600 cursor-pointer transition-all duration-300 hover:bg-gray-500 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="2"></div>
+                    <div class="indicator3 w-6 h-4 bg-gray-600 cursor-pointer transition-all duration-300 hover:bg-gray-500 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="3"></div>
+                    <div class="indicator3 w-6 h-4 bg-gray-600 cursor-pointer transition-all duration-300 hover:bg-gray-500 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="4"></div>
+                    <div class="indicator3 w-6 h-4 bg-gray-600 cursor-pointer transition-all duration-300 hover:bg-gray-500 hover:scale-110 active:scale-95"
+                        style="clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);" data-index="5"></div>
+                </div>
+            </div>
+
+            <div
+                class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 px-4 md:px-10 lg:px-20 font-bold text-xl md:text-2xl">
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/ConceptAMGGTXXcornering.jpg" class="w-full">
+                    <h3 class="mt-3 md:mt-4">CONCEPT AMG GT XX</h3>
+                </div>
+
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/F1Mercedes.jpg" class="w-full">
+                    <h3 class="mt-3 md:mt-4">F1® The Movie</h3>
+                </div>
+
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/TheAMGONE.avif" class="w-full">
+                    <h3 class="mt-3 md:mt-4">INSIDE AMG — All Episodes</h3>
+                </div>
+
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/Manufakturlettering.avif" class="w-full">
+                    <h3 class="mt-3 md:mt-4">MANUFAKTUR</h3>
+                </div>
+
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/Mercedes-AMGEQS.avif" class="w-full">
+                    <h3 class="mt-3 md:mt-4">Mercedes-AMG MBUX SOUND DRIVE</h3>
+                </div>
+
+                <div class="transition-transform duration-300 hover:scale-[1.02]">
+                    <img src="img/Mercedes-AMGSLRoadster.avif" class="w-full">
+                    <h3 class="mt-3 md:mt-4">History of Mercedes SL</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center py-8 md:py-10">
+            <p class="bg-red-700 px-6 md:px-8 py-3 inline-block cursor-pointer text-sm md:text-base shadow-[0_0_12px_rgba(220,38,38,0.6)]
+            transition-all duration-300 ease-in-out
+            hover:bg-red-700
+            hover:shadow-[0_0_20px_rgba(220,38,38,0.9)]
+            active:scale-95">Read more AMG Stories</p>
+        </section>
+
+    </main>
+    <footer>
+
+        <div class="bg-zinc-800 px-4 md:px-10 lg:px-20 py-12 md:py-16 lg:py-20 text-white">
+
+            <div class="flex justify-end mb-8 md:mb-10">
+                <a href="#header"
+                    class="flex items-center gap-2 md:gap-3 cursor-pointer transition-colors duration-300 hover:text-red-700">
+                    <p class="text-sm md:text-base">up</p>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+
+                <div>
+                    <ul class="flex gap-3 text-sm md:text-base">
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">DE</li>
+                        <li>|</li>
+                        <li class="text-red-600">EN</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="flex gap-4 md:gap-5 text-xl md:text-2xl">
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-square-facebook"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="ph ph-x-logo"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                        <li><a class="transition-colors duration-300 hover:text-red-700 cursor-pointer"><i
+                                    class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="flex flex-wrap justify-center gap-2 text-xs md:text-sm opacity-80">
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">About us |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Career |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Contact |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Provider |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Privacy |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Legal |</li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Accessibility |
+                        </li>
+                        <li class="transition-colors duration-300 hover:text-red-700 cursor-pointer">Cookies</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="px-4 md:px-10 lg:px-20 py-8 md:py-10 text-xs md:text-sm opacity-70 leading-relaxed text-white">
+            <p>© 2025 Mercedes-AMG GmbH. Alle Rechte vorbehalten.</p>
+            <p>[1] Weitere Informationen zum offiziellen Kraftstoffverbrauch und den offiziellen spezifischen
+                CO₂-Emissionen neuer
+                Personenkraftwagen können dem "Leitfaden über den Kraftstoffverbrauch, die CO₂-Emissionen und den
+                Stromverbrauch" neuer
+                Personenkraftwagen entnommen werden, der an allen Verkaufsstellen und bei der Deutschen Automobil
+                Treuhand GmbH unter
+                www.dat.de unentgeltlich erhältlich ist.</p>
+            <p>[2] Die angegebenen Werte sind die ermittelten WLTP-CO2-Werte i.S.v. Art. 2 Nr. 3 Durchführungsverordnung
+                (EU)
+                2017/1153. Die Kraftstoffverbrauchswerte wurden auf Basis dieser Werte errechnet. Stromverbrauch [und
+                Reichweite]
+                wurde[n] auf Grundlage der VO 2017/1151/EU ermittelt.</p>
+            <p>[3] Alle Angaben sind vorläufig und wurden intern nach Maßgabe der Zertifizierungsmethode
+                "WLTP-Prüfverfahren"
+                ermittelt. Es liegen bislang weder bestätigte Werte einer amtlich anerkannten Prüforganisation noch eine
+                EG-Typgenehmigung noch eine Konformitätsbescheinigung mit amtlichen Werten vor. Abweichungen zwischen
+                den Angaben und
+                den amtlichen Werten sind möglich.</p>
+            <p>[4] Gemäß WLTP. Stromverbrauch und Reichweite wurden auf Grundlage der VO 2017/1151/EU ermittelt.</p>
+            <p>[5] Gemäß WLTP. Angaben zum Stromverbrauch und zur Reichweite sind vorläufig und wurden intern nach
+                Maßgabe der
+                Zertifizierungsmethode "WLTP-Prüfverfahren" ermittelt. Es liegen bislang weder bestätigte Werte vom TÜV
+                noch eine
+                EG-Typengenehmigung noch eine Konformitätsbescheinigung mit amtlichen Werten vor. Abweichungen zwischen
+                den Angaben und
+                den amtlichen Werten sind möglich.</p>
+            <p>[6] Angaben zu Kraftstoffverbrauch, CO2-Emissionen, Stromverbrauch und Reichweite sind vorläufig und
+                wurden intern nach
+                Maßgabe der Zertifizierungsmethode "WLTP-Prüfverfahren" ermittelt. Es liegen bislang weder bestätigte
+                Werte von einer
+                amtlich anerkannten Prüforganisation noch eine EG-Typgenehmigung noch eine Konformitätsbescheinigung mit
+                amtlichen
+                Werten vor. Abweichungen zwischen den Angaben und den amtlichen Werten sind möglich.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            initCarousel('scrollContainer', 'indicator');
+            initCarousel('scrollContainer2', 'indicator2');
+            initCarousel('scrollContainer3', 'indicator3');
+
+            function initCarousel(containerId, indicatorClass) {
+                const scrollContainer = document.getElementById(containerId);
+                const indicators = document.querySelectorAll('.' + indicatorClass);
+
+                if (!scrollContainer || indicators.length === 0) {
+                    return;
+                }
+
+                const cards = scrollContainer.querySelectorAll('.w-\\[85vw\\]');
+
+                if (cards.length === 0) {
+                    return;
+                }
+
+                indicators.forEach(indicator => {
+                    indicator.addEventListener('click', function () {
+                        const index = parseInt(this.dataset.index);
+                        const card = cards[index];
+
+                        if (card) {
+                            const containerRect = scrollContainer.getBoundingClientRect();
+                            const cardRect = card.getBoundingClientRect();
+                            const scrollLeft = scrollContainer.scrollLeft;
+                            const targetScroll = cardRect.left - containerRect.left + scrollLeft - 16;
+
+                            scrollContainer.scrollTo({
+                                left: targetScroll,
+                                behavior: 'smooth'
+                            });
+
+                            updateIndicators(indicators, index);
+                        }
+                    });
+                });
+
+                scrollContainer.addEventListener('scroll', function () {
+                    const containerRect = scrollContainer.getBoundingClientRect();
+                    const containerCenter = containerRect.left + containerRect.width / 2;
+
+                    let closestIndex = 0;
+                    let closestDistance = Infinity;
+
+                    cards.forEach((card, index) => {
+                        const cardRect = card.getBoundingClientRect();
+                        const cardCenter = cardRect.left + cardRect.width / 2;
+                        const distance = Math.abs(cardCenter - containerCenter);
+
+                        if (distance < closestDistance) {
+                            closestDistance = distance;
+                            closestIndex = index;
+                        }
+                    });
+
+                    updateIndicators(indicators, closestIndex);
+                });
+
+                function updateIndicators(indicators, activeIndex) {
+                    indicators.forEach((indicator, index) => {
+                        if (index === activeIndex) {
+                            indicator.classList.remove('bg-gray-600');
+                            indicator.classList.add('bg-red-700', 'active');
+                        } else {
+                            indicator.classList.remove('bg-red-700', 'active');
+                            indicator.classList.add('bg-gray-600');
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
